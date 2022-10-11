@@ -27,8 +27,6 @@ app.use('/api/v2', product)
 app.use('/api/v2', user)
 app.use('/api/v2', order)
 app.use('/api/v2', payment)
-var distDir = __dirname + '/dist/'
-app.use(express.static(distDir))
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 
 app.get('*', (req, res) => {
