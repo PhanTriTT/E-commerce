@@ -12,7 +12,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }))
 app.use(fileUpload({ useTempFiles: true }))
 
-// config
+//config
 if (process.env.NODE_ENV !== 'PRODUCTION') {
   require('dotenv').config({
     path: 'backend/config/.env',
@@ -28,13 +28,13 @@ app.use('/api/v2', user)
 app.use('/api/v2', order)
 app.use('/api/v2', payment)
 
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+// app.use(express.static(path.join(__dirname, '../frontend/build')))
 
-app.get('*', (req, res) =>
-  res.sendFile(
-    path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
-  )
-)
+// app.get('*', (req, res) =>
+//   res.sendFile(
+//     path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+//   )
+// )
 
 //it's for error handling
 app.use(ErrorHandler)
