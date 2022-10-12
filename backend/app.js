@@ -5,7 +5,7 @@ const ErrorHandler = require('./middleware/error')
 const cookieParser = require('cookie-parser')
 const fileUpload = require('express-fileupload')
 const bodyParser = require('body-parser')
-
+const path = require('path')
 app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
