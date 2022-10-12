@@ -9,7 +9,7 @@ import Pagination from 'react-js-pagination'
 import './Products.css'
 import Typography from '@mui/material/Typography'
 import MetaData from '../../more/MetaData'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import BottomTab from '../../more/BottomTab'
 import empty from '../../Assets/empty.svg'
 
@@ -104,9 +104,15 @@ const Products = () => {
                 <Typography style={{ fontSize: '1.2vmax', padding: '5px' }}>
                   QUICK LINKS
                 </Typography>
-                <li className='category-link'>My Carts</li>
-                <li className='category-link'>Favourites Items</li>
-                <li className='category-link'>Go to Checkout</li>
+                <Link to={'/cart'}>
+                  <li className='category-link'>My Carts</li>
+                </Link>
+                <Link to={'/favourites'}>
+                  <li className='category-link'>Favourites Items</li>
+                </Link>
+                <Link>
+                  <li className='category-link'>Go to Checkout</li>
+                </Link>
               </div>
 
               {products.length === 0 ? (
@@ -163,20 +169,24 @@ const Products = () => {
                 margin: '6vmax',
               }}
             >
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText='Next'
-                prevPageText='Prev'
-                firstPageText='First'
-                lastPageText='Last'
-                itemClass='page-item'
-                linkClass='page-link'
-                activeClass='pageItemActive'
-                activeLinkClass='pageLinkActive'
-              />
+              {products.length > 0 ? (
+                <Pagination
+                  activePage={currentPage}
+                  itemsCountPerPage={resultPerPage}
+                  totalItemsCount={productsCount}
+                  onChange={setCurrentPageNo}
+                  nextPageText='Next'
+                  prevPageText='Prev'
+                  firstPageText='First'
+                  lastPageText='Last'
+                  itemClass='page-item'
+                  linkClass='page-link'
+                  activeClass='pageItemActive'
+                  activeLinkClass='pageLinkActive'
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </div>
           <Footer />
