@@ -8,6 +8,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import PeopleIcon from '@mui/icons-material/People'
 import RateReviewIcon from '@mui/icons-material/RateReview'
+import logo from '../../Assets/logo.svg'
 
 const Sidebar = () => {
   const button = () => {
@@ -18,8 +19,11 @@ const Sidebar = () => {
     <div className='sidebar'>
       <Link to='/'>
         <img
-          src='http://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg'
+          src={logo}
           alt='Ecommerce'
+          style={{
+            height: '150px',
+          }}
         />
       </Link>
       <Link to='/dashboard'>
