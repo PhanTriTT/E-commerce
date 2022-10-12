@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
     <>
       <Link className='ProductCard' to={`/product/${product._id}`}>
         <img
-          src={product.images[0].url}
+          src={product.images[0]?.url}
           alt={product.name}
           className='ProductImg'
         />
