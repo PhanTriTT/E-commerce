@@ -113,7 +113,7 @@ const UserData = ({ user }) => {
         ariaLabel='SpeedDial tooltip example'
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        style={{ zIndex: '11' }}
+        style={{ zIndex: '11', top: '60px' }}
         open={open}
         direction='down'
         className='speedDial'
