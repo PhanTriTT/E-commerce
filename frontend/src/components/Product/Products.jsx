@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography'
 import MetaData from '../../more/MetaData'
 import { useParams } from 'react-router-dom'
 import BottomTab from '../../more/BottomTab'
+import empty from '../../Assets/empty.svg'
 
 const categories = [
   'Birthday flowers',
@@ -109,17 +110,32 @@ const Products = () => {
               </div>
 
               {products.length === 0 ? (
-                <span
+                <div
                   style={{
-                    display: 'block',
-                    padding: '30px 0',
-                    fontSize: '1.5rem',
-                    flex: '.9',
-                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flex: '1',
                   }}
                 >
-                  No Product Found ....
-                </span>
+                  <img
+                    src={empty}
+                    alt='empty'
+                    style={{ width: '300px', height: '300px' }}
+                  />
+                  <span
+                    style={{
+                      display: 'block',
+                      padding: '30px 0',
+                      fontSize: '1.5rem',
+                      flex: '.9',
+                      textAlign: 'center',
+                    }}
+                  >
+                    No Product Found ....
+                  </span>
+                </div>
               ) : (
                 <div
                   className='products'
