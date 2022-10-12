@@ -8,20 +8,18 @@ import { clearErrors, getProduct } from '../../actions/ProductActions'
 import Pagination from 'react-js-pagination'
 import './Products.css'
 import Typography from '@mui/material/Typography'
-// import { useAlert } from "react-alert";
 import MetaData from '../../more/MetaData'
 import { useParams } from 'react-router-dom'
 import BottomTab from '../../more/BottomTab'
-// import BottomTab from '../../more/BottomTab'
 
 const categories = [
-  'Personal',
-  'cloth',
-  'Ladies Cloth',
-  'Gift',
-  'Food',
-  'Electronics',
-  'Sports',
+  'Birthday flowers',
+  'Opening flowers',
+  'Congratulatory flowers',
+  'Condolence flowers',
+  'Love flowers',
+  'Graduation flowers',
+  'Wedding flowers',
   'Others',
 ]
 
