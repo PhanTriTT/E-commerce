@@ -213,6 +213,9 @@ label.MuiRating-label {
 .dasboard__mobile {
   display: none;
 }
+.speedDial {
+  top: 70px;
+}
 @media only screen and (max-width: 768px) {
   .Header {
     display: none;
@@ -295,5 +298,8 @@ label.MuiRating-label {
   .woot-widget-bubble.woot-elements--right {
     right: 20px;
     bottom: 70px;
+  }
+  .speedDial {
+    top: 20px;
   }
 }
