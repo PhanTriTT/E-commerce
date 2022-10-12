@@ -43,13 +43,13 @@ const UpdateProduct = () => {
   const [imagesPreview, setImagesPreview] = useState([])
 
   const categories = [
-    'Personal',
-    'cloth',
-    'Ladies Cloth',
-    'Shoes',
-    'Food',
-    'Electronics',
-    'Sports',
+    'Birthday flowers',
+    'Opening flowers',
+    'Congratulatory flowers',
+    'Condolence flowers',
+    'Love flowers',
+    'Graduation flowers',
+    'Wedding flowers',
     'Others',
   ]
 
