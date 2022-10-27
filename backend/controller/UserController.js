@@ -144,7 +144,14 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
   sendToken(user, 200, res)
 })
-
+//get all users email
+exports.getAllUsersEmail = catchAsyncErrors(async (req, res, next) => {
+  const emails = await User.find().select('email')
+  res.status(200).json({
+    success: true,
+    emails,
+  })
+})
 //get user details
 exports.userDetails = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.user.id)

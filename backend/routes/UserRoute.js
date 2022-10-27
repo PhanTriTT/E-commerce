@@ -12,6 +12,7 @@ const {
   getSingleUser,
   updateUserRole,
   deleteUser,
+  getAllUsersEmail,
 } = require('../controller/UserController')
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth')
 const router = express.Router()
@@ -27,6 +28,10 @@ router.route('/me').get(isAuthenticatedUser, userDetails)
 router
   .route('/admin/users')
   .get(isAuthenticatedUser, authorizeRoles('admin'), getAllUsers)
+
+router
+  .route('/admin/users/allUsersEmail')
+  .get(isAuthenticatedUser, authorizeRoles('admin'), getAllUsersEmail)
 router
   .route('/admin/user/:id')
   .get(isAuthenticatedUser, authorizeRoles('admin'), getSingleUser)

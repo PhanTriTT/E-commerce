@@ -6,6 +6,7 @@ const {
   getAdminAllOrders,
   updateAdminOrder,
   deleteOrder,
+  getMonthlyincome,
 } = require('../controller/OrderController')
 const { isAuthenticatedUser, authorizeRoles } = require('../middleware/auth')
 const router = express.Router()
@@ -21,5 +22,7 @@ router
   .route('/admin/order/:id')
   .put(isAuthenticatedUser, authorizeRoles('admin'), updateAdminOrder)
   .delete(isAuthenticatedUser, authorizeRoles('admin'), deleteOrder)
-
+router
+  .route('/admin/orders/income')
+  .get(isAuthenticatedUser, authorizeRoles('admin'), getMonthlyincome)
 module.exports = router
