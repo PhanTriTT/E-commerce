@@ -8,6 +8,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import PeopleIcon from '@mui/icons-material/People'
 import RateReviewIcon from '@mui/icons-material/RateReview'
+import ShowChartIcon from '@mui/icons-material/ShowChart'
 import logo from '../../Assets/logo.svg'
 
 const Sidebar = () => {
@@ -61,10 +62,10 @@ const Sidebar = () => {
           Reviews
         </p>
       </Link>
-      <Link to='/admin/chart'>
+      <Link to='/admin/monthlyincome'>
         <p>
-          <RateReviewIcon />
-          Chart
+          <ShowChartIcon />
+          Monthly Income
         </p>
       </Link>
     </div>

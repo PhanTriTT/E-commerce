@@ -126,8 +126,8 @@ function App() {
           />
           <Route
             exact
-            path='/admin/chart'
-            element={<ProtectedRoute isAdmin={true} component={Chart } />}
+            path='/admin/monthlyincome'
+            element={<ProtectedRoute isAdmin={true} component={Chart} />}
           />
           <Route
             exact
