@@ -2,32 +2,7 @@ const app = require('./app')
 const dotenv = require('dotenv')
 const connectDatabase = require('./db/Database')
 const cloudinary = require('cloudinary')
-//
-const { google } = require('googleapis')
-const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
-const jwt = new google.auth.JWT(
-  process.env.CLIENT_EMAIL,
-  null,
-  process.env.PRIVATE_KEY,
-  scopes
-)
 
-const view_id = '247200638'
-
-async function getData() {
-  await jwt.authorize()
-  const result = await google.analytics('v3').data.ga.get({
-    auth: jwt,
-    ids: 'ga:' + view_id,
-    'start-date': '30daysAgo',
-    'end-date': 'today',
-    metrics: 'ga:pageviews',
-  })
-  console.log(result)
-}
-
-getData()
-//
 //Handling uncaught Exception
 process.on('uncaughtException', (err) => {
   console.log(`Error: ${err.message}`)
