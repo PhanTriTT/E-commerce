@@ -15,11 +15,20 @@ import BottomTab from '../../more/BottomTab'
 import Loading from '../../more/Loader'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-
+import { google } from 'googleapis'
 const Home = () => {
   const dispatch = useDispatch()
   const { products, error, loading } = useSelector((state) => state.products)
-
+  //
+  const scopes = 'https://www.googleapis.com/auth/analytics.readonly'
+  const jwt = new google.auth.JWT(
+    'minhtritt01@gmail.com',
+    null,
+    '1235sa',
+    scopes
+  )
+  const view_id = '247200638'
+  //
   useEffect(() => {
     if (error) {
       toast.error(error, { position: 'top-right' })
