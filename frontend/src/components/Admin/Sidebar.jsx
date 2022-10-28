@@ -61,6 +61,12 @@ const Sidebar = () => {
           Reviews
         </p>
       </Link>
+      <Link to='/admin/chart'>
+        <p>
+          <RateReviewIcon />
+          Chart
+        </p>
+      </Link>
     </div>
   )
 }

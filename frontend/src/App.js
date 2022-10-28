@@ -45,6 +45,7 @@ import Contact from './more/Contact'
 import Rules from './more/Rules'
 import ComingSoon from './more/ComingSoon'
 import ChatwootWidget from './components/chatwoot'
+import Chart from './components/Admin/Chart'
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user)
 
@@ -122,6 +123,11 @@ function App() {
             element={
               <ProtectedRoute isAdmin={true} component={CreateProduct} />
             }
+          />
+          <Route
+            exact
+            path='/admin/chart'
+            element={<ProtectedRoute isAdmin={true} component={Chart } />}
           />
           <Route
             exact
