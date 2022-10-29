@@ -33,16 +33,7 @@ export default function Chart({
     ],
     []
   )
-  const [pStats, setPStats] = useState([
-    { name: 'Jan', Sales: 20 },
-    { name: 'Feb', Sales: 5200 },
-    { name: 'Mar', Sales: 1000 },
-    { name: 'Apr', Sales: 3600 },
-    { name: 'May', Sales: 3690 },
-    { name: 'Jun', Sales: 200 },
-    { name: 'Jul', Sales: 120 },
-    { name: 'Aug', Sales: 360 },
-  ])
+  const [pStats, setPStats] = useState([])
   useEffect(() => {
     const getStats = async () => {
       try {
@@ -51,10 +42,9 @@ export default function Chart({
           return a._id - b._id
         })
         list.map((item) =>
-          setPStats((prev) => [
-            ...prev,
-            { name: MONTHS[item._id - 1], Sales: item.total },
-          ])
+          setPStats((prev) => {
+            return [...prev, { name: MONTHS[item._id - 1], Sales: item.total }]
+          })
         )
       } catch (error) {
         console.log(error)

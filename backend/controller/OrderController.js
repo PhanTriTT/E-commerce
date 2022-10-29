@@ -112,22 +112,30 @@ exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
 })
 // Get monthly income --admin
 exports.getMonthlyincome = catchAsyncErrors(async (req, res, next) => {
-  const date = new Date()
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1))
-  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1))
+  // const date = new Date(2022, 1, 1)
+  // const lastMonth = new Date(date.setMonth(date.getMonth() - 1))
+  // const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1))
   try {
+    // const income = await Order.aggregate([
+    //   { $match: { createdAt: { $gte: previousMonth } } },
+    //   {
+    //     $project: {
+    //       month: { $month: '$createdAt' },
+    //       sales: '$totalPrice',
+    //     },
+    //   },
+    //   {
+    //     $group: {
+    //       _id: '$month',
+    //       total: { $sum: '$sales' },
+    //     },
+    //   },
+    // ])
     const income = await Order.aggregate([
-      { $match: { createdAt: { $gte: previousMonth } } },
-      {
-        $project: {
-          month: { $month: '$createdAt' },
-          sales: '$totalPrice',
-        },
-      },
       {
         $group: {
-          _id: '$month',
-          total: { $sum: '$sales' },
+          _id: { $month: { $toDate: '$createdAt' } },
+          total: { $sum: '$totalPrice' },
         },
       },
     ])
