@@ -46,6 +46,7 @@ import Rules from './more/Rules'
 import ComingSoon from './more/ComingSoon'
 import ChatwootWidget from './components/chatwoot'
 import Chart from './components/Admin/Chart'
+import DashBoardGoogleAnalytic from './components/Admin/DashBoardGoogleAnalytic'
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user)
 
@@ -122,6 +123,16 @@ function App() {
             path='/admin/product'
             element={
               <ProtectedRoute isAdmin={true} component={CreateProduct} />
+            }
+          />
+          <Route
+            exact
+            path='/admin/stats'
+            element={
+              <ProtectedRoute
+                isAdmin={true}
+                component={DashBoardGoogleAnalytic}
+              />
             }
           />
           <Route

@@ -12,9 +12,9 @@ const Header = () => {
 
   window.addEventListener('scroll', () => {
     if (window.pageYOffset > 100) {
-      document.querySelector('.navbar').classList.add('active')
+      document.querySelector('.navbar').classList?.add('active')
     } else {
-      document.querySelector('.navbar').classList.remove('active')
+      document.querySelector('.navbar').classList?.remove('active')
     }
   })
 

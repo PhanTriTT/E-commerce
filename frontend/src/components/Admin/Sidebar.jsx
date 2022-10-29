@@ -9,6 +9,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard'
 import PeopleIcon from '@mui/icons-material/People'
 import RateReviewIcon from '@mui/icons-material/RateReview'
 import ShowChartIcon from '@mui/icons-material/ShowChart'
+import AutoGraphIcon from '@mui/icons-material/AutoGraph'
 import logo from '../../Assets/logo.svg'
 
 const Sidebar = () => {
@@ -23,7 +24,7 @@ const Sidebar = () => {
           src={logo}
           alt='Ecommerce'
           style={{
-            height: '150px',
+            height: '100px',
           }}
         />
       </Link>
@@ -66,6 +67,12 @@ const Sidebar = () => {
         <p>
           <ShowChartIcon />
           Monthly Income
+        </p>
+      </Link>
+      <Link to='/admin/stats'>
+        <p>
+          <AutoGraphIcon />
+          Stats
         </p>
       </Link>
     </div>
