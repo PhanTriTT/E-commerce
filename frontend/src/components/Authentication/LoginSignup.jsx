@@ -59,7 +59,6 @@ const LoginSignup = () => {
   }
 
   const redirect = location.search ? location.search.split('=')[1] : '/'
-
   useEffect(() => {
     if (error) {
       toast.error(error, { position: 'top-center' })

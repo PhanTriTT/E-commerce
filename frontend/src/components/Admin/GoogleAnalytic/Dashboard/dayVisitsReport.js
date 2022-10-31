@@ -49,14 +49,12 @@ const DayVisitsReport = (props) => {
           suggestedMin: 0,
         },
       },
-      x: [
-        {
-          ticks: {
-            autoSkip: true,
-            maxTicksLimit: 7,
-          },
+      x: {
+        ticks: {
+          autoSkip: true,
+          maxTicksLimit: 7,
         },
-      ],
+      },
     },
     maintainAspectRatio: false,
     legend: {
