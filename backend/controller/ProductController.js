@@ -54,6 +54,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     .search()
     .filter()
     .pagination(resultPerPage)
+    .sort()
   const products = await feature.query
   res.status(200).json({
     success: true,

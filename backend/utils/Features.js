@@ -34,5 +34,10 @@ class Features {
     this.query = this.query.limit(resultPerPage).skip(skip)
     return this
   }
+  sort() {
+    const sort = this.queryStr.sort
+    this.query = this.query.find().sort({ price: sort })
+    return this
+  }
 }
 module.exports = Features
