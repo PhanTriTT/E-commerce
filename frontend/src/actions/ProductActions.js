@@ -39,7 +39,7 @@ export const getProduct =
       let link = `/api/v2/products?keyword=${keyword}&page=${currentPage}`
 
       if (category) {
-        link = `/api/v2/products?keyword=${keyword}&page=${currentPage}&category=${category}`
+        link = `/api/v2/products?keyword=${keyword}&page=${currentPage}&category=${category}&sort=${sort}`
       } else if (sort) {
         link = `/api/v2/products?sort=${sort}`
       }
