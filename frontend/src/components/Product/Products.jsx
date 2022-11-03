@@ -30,6 +30,8 @@ const Products = () => {
 
   const [category, setCategory] = useState('')
 
+  const [sort, setSort] = useState('')
+
   const { products, loading, error, productsCount, resultPerPage } =
     useSelector((state) => state.products)
   const { keyword } = useParams()
@@ -42,8 +44,8 @@ const Products = () => {
       alert(error)
       dispatch(clearErrors())
     }
-    dispatch(getProduct(keyword, currentPage, category))
-  }, [dispatch, keyword, currentPage, category, error])
+    dispatch(getProduct(keyword, currentPage, category, sort))
+  }, [dispatch, keyword, currentPage, category, error, sort])
 
   return (
     <>
@@ -86,6 +88,29 @@ const Products = () => {
                   flex: '.177',
                 }}
               >
+                <div style={{ display: 'flex' }}>
+                  <Typography
+                    style={{
+                      fontSize: '1.2vmax',
+                      padding: '5px',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Sort :
+                  </Typography>
+                  <select
+                    style={{
+                      padding: '10px',
+                      marginRight: '20px',
+                    }}
+                    onChange={(e) => setSort(e.target.value)}
+                    defaultValue={``}
+                    value={sort}
+                  >
+                    <option value='1'>Price(asc)</option>
+                    <option value='-1'>Price(desc)</option>
+                  </select>
+                </div>
                 <Typography style={{ fontSize: '1.2vmax', padding: '5px' }}>
                   CHOOSE CATEGORIES
                 </Typography>

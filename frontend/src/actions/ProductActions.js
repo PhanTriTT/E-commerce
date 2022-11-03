@@ -30,7 +30,7 @@ import {
   UPDATE_PRODUCT_SUCCESS,
 } from '../constants/ProductConstants'
 export const getProduct =
-  (keyword = '', currentPage = 1, category) =>
+  (keyword = '', currentPage = 1, category, sort) =>
   async (dispatch) => {
     try {
       dispatch({
@@ -40,6 +40,9 @@ export const getProduct =
 
       if (category) {
         link = `/api/v2/products?keyword=${keyword}&page=${currentPage}&category=${category}`
+      }
+      if (sort) {
+        link = `/api/v2/products?sort=${sort}&page=${currentPage}&category=${category}&keyword=${keyword}`
       }
 
       const { data } = await axios.get(link)
