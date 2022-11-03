@@ -36,6 +36,7 @@ class Features {
   }
   sort() {
     const sort = this.queryStr.sort
+
     this.query = this.query.find().sort({ price: sort })
     return this
   }

@@ -38,7 +38,6 @@ const Products = () => {
   const setCurrentPageNo = (e) => {
     setCurrentPage(e)
   }
-
   useEffect(() => {
     if (error) {
       alert(error)
@@ -103,7 +102,10 @@ const Products = () => {
                       padding: '10px',
                       marginRight: '20px',
                     }}
-                    onChange={(e) => setSort(e.target.value)}
+                    onChange={(e) => {
+                      setCurrentPage(1)
+                      setSort(e.target.value)
+                    }}
                     defaultValue={``}
                     value={sort}
                   >
