@@ -39,10 +39,9 @@ export const getProduct =
       let link = `/api/v2/products?keyword=${keyword}&page=${currentPage}`
 
       if (category) {
-        link = `/api/v2/products?keyword=${keyword}&page=${currentPage}&category=${category}`
-      }
-      if (sort) {
-        link = `/api/v2/products?sort=${sort}&page=${currentPage}&category=${category}&keyword=${keyword}`
+        link = `/api/v2/products?keyword=${keyword}&page=${currentPage}&category=${category}&sort=${sort}`
+      } else if (sort) {
+        link = `/api/v2/products?sort=${sort}`
       }
 
       const { data } = await axios.get(link)
