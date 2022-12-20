@@ -87,7 +87,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   await user.save({
     validateBeforeSave: false,
   })
-  const host = `ttbflowers.herokuapp.com`
+  const host = `ttbflowers.onrender.com`
   const resetPasswordUrl = `${req.protocol}://${host}/password/reset/${resetToken}`
 
   const message = `Your password reset token is :- \n \n ${resetPasswordUrl}`
